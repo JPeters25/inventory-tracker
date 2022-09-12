@@ -12,6 +12,7 @@ function EditCoffeeBagForm (props) {
       origin: event.target.origin.value,
       price: event.target.price.value,
       roast: event.target.roast.value,
+      weight: event.target.weight.value,
       id: coffeeBag.id
     });
   }

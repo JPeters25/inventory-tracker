@@ -17,6 +17,7 @@ CoffeeBag.propTypes = {
   origin: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
   roast: PropTypes.string.isRequired,
+  weight: PropTypes.string.isRequired,
   id: PropTypes.string,
   whenCoffeeBagClicked: PropTypes.func
 }

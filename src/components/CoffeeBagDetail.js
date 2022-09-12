@@ -2,17 +2,19 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function CoffeeBagDetail(props) {
-  const { coffeeBag, onClickingDelete } = props;
+  const { coffeeBag, onClickingDelete, onClickingSell } = props;
 
   return (
     <React.Fragment>
       <h1>Coffee Bag Details</h1>
       <h3>{coffeeBag.names}</h3>
-      <p>{coffeeBag.origin}</p>
-      <p>{coffeeBag.roast}</p>
-      <p><em>{coffeeBag.price}</em></p>
+      <p>Origin: {coffeeBag.origin}</p>
+      <p>Roast: {coffeeBag.roast}</p>
+      <p>Weight in lbs: {coffeeBag.weight}</p>
+      <p>Price: <em>${coffeeBag.price}/lb</em></p>
       <button onClick={ props.onClickingEdit}>Edit Bag</button>
       <button onClick={()=> onClickingDelete(coffeeBag.id)}>Delete Bag</button>
+      <button onClick={()=> onClickingSell(coffeeBag.id)}>Sell 1</button>
     </React.Fragment>
   );
 }

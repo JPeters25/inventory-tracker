@@ -12,7 +12,7 @@ class CoffeeBagControl extends React.Component {
       formVisibleOnPage: false, 
       mainCoffeeBagList: [],
       selectedCoffeeBag: null,
-      editing: false
+      editing: false,
     };
   }
   //Create
@@ -20,11 +20,53 @@ class CoffeeBagControl extends React.Component {
     const newMainCoffeeBagList = this.state.mainCoffeeBagList.concat
     (newCoffeeBag);
     this.setState({mainCoffeeBagList: newMainCoffeeBagList,
-                  formVisibleOnPage: false });
-  }
+      formVisibleOnPage: false });
+    }
+    
+  handleDeletingCoffeeBag = (id) => {
+      const newMainCoffeeBagList = this.state.mainCoffeeBagList.filter
+      (coffeeBag => coffeeBag.id !== id);
+      this.setState({
+        mainCoffeeBagList: newMainCoffeeBagList,
+        selectedCoffeeBag: null
+      });
+    }
 
-  //Read
-  handleClick = () => {
+    handleSellCoffee = (id) => {
+      const soldCoffeeBagList = this.state.mainCoffeeBagList.map((coffeeBag) => {
+        if (coffeeBag === id) {
+          console.log(coffeeBag)
+          if (coffeeBag.weight > 0){
+            return {
+              ...coffeeBag,
+                weight: coffeeBag.weight -1,
+            };
+          } else {
+            return coffeeBag;
+          }
+        }
+      })
+      this.setState({mainCoffeeBagList: soldCoffeeBagList})
+    }
+ 
+    handleEditingCoffeeBagInList = (coffeeBagToEdit) => {
+      const editedMainCoffeeBagList = this.state.mainCoffeeBagList
+      .filter(coffeeBag => coffeeBag.id !== this.state.selectedCoffeeBag.id)
+      .concat(coffeeBagToEdit);
+
+      this.setState({
+        mainCoffeeBagList: editedMainCoffeeBagList,
+        editing: false,
+        selectedTicket: null
+      })
+    }
+
+    handleEditClick = (id) => {
+      this.setState({editing: true});
+    }
+  
+    //Read
+    handleClick = () => {
     if(this.state.selectedCoffeeBag !=null) {
       this.setState ({
         formVisibleOnPage: false,
@@ -39,34 +81,8 @@ class CoffeeBagControl extends React.Component {
   }
 
   handleChangingSelectedCoffeeBag = (id) => {
-    const selectedCoffeeBag = this.state.mainCoffeeBagList.filter
-    (coffeeBag => coffeeBag.id === id)[0];
+    const selectedCoffeeBag = this.state.mainCoffeeBagList.filter(coffeeBag => coffeeBag.id === id)[0];
     this.setState({selectedCoffeeBag : selectedCoffeeBag});
-  }
-
-  handleEditClick = (id) => {
-    this.setState({editing: true});
-  }
-
-  handleEditingCoffeeBagList = (coffeeBagToEdit) => {
-    const editedMainCoffeeBagList = this.state.mainCoffeeBagList
-    .filter(coffeeBag => coffeeBag.id !== this.state.selectedCoffeeBag.id)
-    .concat(coffeeBagToEdit);
-
-    this.setState({
-      mainCoffeeBagList: editedMainCoffeeBagList,
-      editing: false,
-      selectedTicket: null
-    })
-  }
-
-  handleDeletingCoffeeBag = (id) => {
-    const newMainCoffeeBagList = this.state.mainCoffeeBagList.filter
-    (coffeeBag => coffeeBag.id !== id);
-    this.setState({
-      mainCoffeeBagList: newMainCoffeeBagList,
-      selectedCoffeeBag: null
-    })
   }
 
   render(){
@@ -82,7 +98,8 @@ class CoffeeBagControl extends React.Component {
       <CoffeeBagDetail
         coffeeBag = {this.state.selectedCoffeeBag}
         onClickingDelete = {this.handleDeletingCoffeeBag}
-        onClickingEdit = {this.handleEditClick} />
+        onClickingEdit = {this.handleEditClick} 
+        onClickingSell = {this.handleSellCoffee} />
         buttonText = "Return to List of Coffee";
     }
     else if (this.state.formVisibleOnPage) {

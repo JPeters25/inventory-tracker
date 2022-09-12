@@ -8,11 +8,12 @@ function CoffeeBagList(props){
     <React.Fragment>
       {props.coffeeBagList.map((coffeeBag) =>
       <CoffeeBag
-        whenCoffeeBagClicked = { props.whenCoffeeBagSelection }
+        whenCoffeeBagClicked = { props.onCoffeeBagSelection }
         names = {coffeeBag.names}
         origin = {coffeeBag.origin}
         price = {coffeeBag.price}
-        roast = {coffeeBag.Roast}
+        roast = {coffeeBag.roast}
+        weight = {coffeeBag.weight}
         id = {coffeeBag.id}
         key = {coffeeBag.id}/>
       )}
