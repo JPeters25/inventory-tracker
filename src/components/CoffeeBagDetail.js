@@ -14,7 +14,7 @@ function CoffeeBagDetail(props) {
       <p>Price: <em>${coffeeBag.price}/lb</em></p>
       <button onClick={ props.onClickingEdit}>Edit Bag</button>
       <button onClick={()=> onClickingDelete(coffeeBag.id)}>Delete Bag</button>
-      <button onClick={()=> onClickingSell(coffeeBag.id)}>Sell 1</button>
+      <button onClick={ ()=> onClickingSell(coffeeBag.id)}>Sell 1</button>
     </React.Fragment>
   );
 }
@@ -22,7 +22,8 @@ function CoffeeBagDetail(props) {
 CoffeeBagDetail.propTypes = {
   coffeeBag: PropTypes.object,
   onClickingDelete: PropTypes.func,
-  onClickingEdit: PropTypes.func
+  onClickingEdit: PropTypes.func,
+  onClickingSell: PropTypes.func
 };
 
 export default CoffeeBagDetail;
