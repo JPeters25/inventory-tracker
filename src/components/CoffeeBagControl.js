@@ -13,6 +13,7 @@ class CoffeeBagControl extends React.Component {
       mainCoffeeBagList: [],
       selectedCoffeeBag: null,
       editing: false,
+      weight: 0
     };
   }
   //Create
@@ -35,10 +36,9 @@ class CoffeeBagControl extends React.Component {
     handleSellCoffee = (id) => {
       const soldCoffeeBagList = this.state.mainCoffeeBagList.map((coffeeBag) => {
         if (coffeeBag === id) {
-          console.log(coffeeBag)
           if (coffeeBag.weight > 0){
             return {
-              ...coffeeBag,
+                ...coffeeBag,
                 weight: coffeeBag.weight -1,
             };
           } else {
