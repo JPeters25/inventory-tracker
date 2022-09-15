@@ -1,6 +1,59 @@
-# Getting Started with Create React App
+# Week 16 Independent Project: Inventory Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### A React appilcation that will allow the user to add sacks of coffee and sell coffee from the bags by the pound
+
+## Technologies Used
+
+* _JavaScript_
+* _JSX_
+* _React_
+* _CSS_
+* _Markdown_
+
+## Description
+_Build an application in React that tracks inventory for a local business. We're going to keep this simple: you'll pick one inventory item and track how much of it is remaining as it gets sold or given away. There are a lot of themes to choose from, and you can create your own as long as you're able to track the remaining amount of an inventory item and meet the objectives._
+
+ _At our coffee shop, we sell coffee beans in 1-pound servings, and we get our coffee delivered in large burlap sacks. Here are the details:_
+
+* we sell multiple types of coffee beans, each in different burlap sacks
+* one burlap sack contains 130 pounds of coffee beans
+* every sale decrements one pound of coffee beans from the burlap sack, until it is empty
+
+_Before getting started, plan out your application and draw a component tree or component diagram that shows the structure of your components. This is a requirement for the project and should be included in your README. You may draw the structure on a piece of paper and take a picture of it or use an application like https://www.draw.io/._
+
+_You are only expected to add CREATE and READ functionality, though you are welcome to implement full CRUD. Here are some user stories to get you started. The application should have the following functionality:_
+
+* As a user, I want to see a list/menu of all available types of coffee beans.
+* For each item, I want to see its name, origin, price, and roast (light, medium, or dark) of the coffee bean. (You are welcome to include anything additional that is relevant to the product your store carries.)
+* As a user, I want to submit a form to add a new burlap sack of coffee to the inventory.
+* As a user, I want to be able to click on a burlap sack to see its detail page.
+* As a user, I want to see how many pounds of coffee beans are left in a burlap sack. A burlap sack has roughly 130 pounds.
+* As a user, I want to be able to click a button to sell a pound of coffee beans. This should decrease the number of pounds left by 1. The number of pounds in a sack of coffee beans should not be able to go below 0.
+
+## Setup/Installation Requirements
+
+* _clone or download repository to your local computer_
+* _navigate into the inventory-tracker and run npm install in the terminal_
+* _next run the following command in the terminal: npm run build_
+* _finally run the following command in the termal: npm run start_ 
+
+## Known Bugs
+
+* _Sell button does not decrement the total weight of the coffee bag_
+
+## License
+
+* MIT
+
+## Contact Information
+
+_For any questions or contributions please email me at Jmarvel525@gmail.com_
+
+Copyright(c) Sept 2022 Justin Peters
+
+// The followingis auto-generated when using Create-React-App in the terminal
+
+# Getting Started with Create React App
 
 ## Available Scripts
 
