@@ -87,6 +87,16 @@ class CoffeeBagControl extends React.Component {
 
   render(){
 
+    const buttonStyledComponentsStyles = {
+      backgroundColor:'black',
+      color:'white',
+      fontSize: '20px',
+      padding: '10px 60px',
+      borderRadius: '5px',
+      margin: '10px 0px',
+      cursor:'pointer'
+    };
+
     let currentlyVisibleState = null;
     let buttonText = null;
 
@@ -100,7 +110,7 @@ class CoffeeBagControl extends React.Component {
         onClickingDelete = {this.handleDeletingCoffeeBag}
         onClickingEdit = {this.handleEditClick} 
         onClickingSell = {this.handleSellCoffee} />
-        buttonText = "Return to List of Coffee";
+        buttonText = "Return to List of Coffee"
     }
     else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = 
@@ -117,7 +127,7 @@ class CoffeeBagControl extends React.Component {
     return(
       <React.Fragment>
       {currentlyVisibleState}
-      <button onClick={this.handleClick}> 
+      <button style={buttonStyledComponentsStyles} onClick={this.handleClick}> 
       {buttonText}</button>
       </React.Fragment>
     );

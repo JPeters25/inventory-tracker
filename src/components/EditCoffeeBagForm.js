@@ -4,7 +4,15 @@ import PropTypes from "prop-types";
 
 function EditCoffeeBagForm (props) {
   const { coffeeBag } = props;
-
+  const buttonStyledComponentsStyles = {
+    backgroundColor:'black',
+    color:'white',
+    fontSize: '20px',
+    padding: '10px 60px',
+    borderRadius: '5px',
+    margin: '10px 0px',
+    cursor:'pointer'
+  };
   function handleEditCoffeeBagFormSubmission(event) {
     event.preventDefault();
     props.onEditCoffeeBag({
@@ -20,7 +28,7 @@ function EditCoffeeBagForm (props) {
     <React.Fragment>
       <ReusableForm
       formSubmissionHandler={handleEditCoffeeBagFormSubmission}
-      buttonText="Update Coffee Bag" />
+      buttonStyle = {buttonStyledComponentsStyles}buttonText="Update Coffee Bag" />
     </React.Fragment>
   );
 }
