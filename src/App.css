@@ -37,7 +37,8 @@
   }
 }
 
-font-face {
-  font-family: EspressoBeans;
-  src:url(../src/font/EspressoBeans.ttf)
+@font-face {
+  font-family: "EspressoBeans";
+  src: local("EspressoBeans"),
+    url(../src/font/EspressoBeans.ttf) format("truetype")
 }
