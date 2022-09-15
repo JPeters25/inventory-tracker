@@ -3,7 +3,8 @@ import React from "react";
 function Header(){
   const headerStyledComponentsStyles = {
     fontFamily: 'EspressoBeans',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontSize: '32px'
   }
   return (
     <div style= {headerStyledComponentsStyles}>

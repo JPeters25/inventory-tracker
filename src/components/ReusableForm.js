@@ -1,11 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
+import formBG from "../img/formBG.jpg";
 
 const ReusableForm = (props) => {
+  const formStyledComponentsStyles = {
+    backgroundImage: 'url(../src/img/formBG.jpg)',
+    width: '250px',
+    margin: 'auto'
+  }
   return (
+    <div style = {formStyledComponentsStyles}>
+    <div style = {{backgroundImage: `url(${formBG})`,backgroundSize:'contain', opacity:'0.5'}}>
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
-        <input
+        <input 
           type='text'
           name='names'
           placeholder='Coffee Name' />
@@ -38,6 +46,8 @@ const ReusableForm = (props) => {
         <button type='submit'>{props.buttonText}</button>
       </form>
     </React.Fragment>
+    </div>
+  </div>
   );
 };
 

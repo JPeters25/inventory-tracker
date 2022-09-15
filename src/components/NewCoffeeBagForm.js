@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import ReusableForm from "./ReusableForm";
 
 function NewCoffeeBagForm(props){
-
   function handleNewCoffeeBagFormSubmission(event) {
     event.preventDefault();
     props.onNewCoffeeBagCreation({
